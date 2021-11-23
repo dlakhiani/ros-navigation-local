@@ -3,5 +3,10 @@
         "/home/dhruv/ros-navigation-local/devel/lib/python2.7/dist-packages",
         "/opt/ros/melodic/lib/python2.7/dist-packages",
         "/home/dhruv/home/simulations/public_sim_ws/devel/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/dhruv/ros-navigation-local/devel/lib/python2.7/dist-packages",
+        "/opt/ros/melodic/lib/python2.7/dist-packages",
+        "/home/dhruv/home/simulations/public_sim_ws/devel/lib/python3/dist-packages"
     ]
 }
