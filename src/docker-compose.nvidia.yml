@@ -1,0 +1,20 @@
+version: "3.4"
+
+services:
+  # ROS remote development environment
+  ros-develop:
+    image: nav/ros-develop:0.1
+    build:
+      context: .
+      dockerfile: ./docker/ros-develop-nvidia.dockerfile
+    runtime: nvidia
+    tty: true
+    environment:
+      - "DISPLAY"
+      - "QT_X11_NO_MITSHM=1"
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility,display
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+    command: roslaunch turtlebot_navigation_gazebo main.launch
+    # command: tail -F all

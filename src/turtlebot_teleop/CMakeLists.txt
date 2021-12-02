@@ -27,10 +27,10 @@ catkin_install_python(PROGRAMS src/turtlebot_teleop_key.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
 
 ## Mark executable scripts (Python etc.) for installation
-install(PROGRAMS
-  scripts/turtlebot_teleop_key
-  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-)
+# install(PROGRAMS
+#   scripts/turtlebot_teleop_key
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
 
 ## Mark executables and/or libraries for installation
 install(TARGETS turtlebot_teleop_joy

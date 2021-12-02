@@ -1,12 +1,6 @@
 version: "3.5"
 
 services:
-  # ros-master:
-  #   image: ros:melodic-ros-core
-  #   command: stdbuf -o L roscore
-  #   network_mode: host
-  #   restart: always
-
   # ROS remote development environment
   ros-develop:
     image: iris/ros-develop:0.1
@@ -20,35 +14,10 @@ services:
     environment:
       - "ROS_MASTER_URI=${ROS_MASTER_URI}"
       - "ROS_HOSTNAME=${ROS_HOSTNAME}"
-      # - DISPLAY=${DISPLAY}
     volumes:
-      # - /tmp/.X11-unix:/tmp/.X11-unix
       - ./storage:/storage
       - ./docs:/docs
     network_mode: host
     # ports:
     #   - "2222:2222" # ssh
     restart: always
-
-  # lesson1:
-  #   image: ros-nav/lesson1:0.1
-  #   build:
-  #     context: .
-  #     dockerfile: ./docker/lesson1.dockerfile
-  #   privileged: true
-  #   environment:
-  #     - "ROS_MASTER_URI=${ROS_MASTER_URI}"
-  #     - "ROS_HOSTNAME=${ROS_HOSTNAME}"
-  #   network_mode: host
-  #   restart: always
-  #   volumes:
-  #     - ./kobuki_description:/ros-navigation-local/src/kobuki_description
-  #     - ./turtlebot_bringup:/ros-navigation-local/src/turtlebot_bringup
-  #     - ./turtlebot_create:/ros-navigation-local/src/turtlebot_create
-  #     - ./turtlebot_description:/ros-navigation-local/src/turtlebot_description
-  #     - ./turtlebot_navigation:/ros-navigation-local/src/turtlebot_navigation
-  #     - ./turtlebot_navigation_gazebo:/ros-navigation-local/src/turtlebot_navigation_gazebo
-  #     - ./turtlebot_rviz_launchers:/ros-navigation-local/src/turtlebot_rviz_launchers
-  #     - ./turtlebot_teleop:/ros-navigation-local/src/turtlebot_teleop
-  #   # command: roslaunch turtlebot_navigation_gazebo main.launch --wait
-  #   command: tail -F anything
