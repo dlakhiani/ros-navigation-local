@@ -1,5 +1,5 @@
 <launch>
-  <arg name="world_file"  default="$(find turtlebot_navigation_gazebo)/worlds/corridor.world"/> 
+  <arg name="world_file"  default="$(find turtlebot_navigation_gazebo)/worlds/empty_cafe.world"/> 
   <!-- <arg name="world_file"  default="$(find summit_xl_gazebo)/worlds/test_zone.sdf"/> -->
 
   <arg name="base"      value="$(optenv TURTLEBOT_BASE kobuki)"/> <!-- create, roomba -->
